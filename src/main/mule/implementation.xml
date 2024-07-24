@@ -16,9 +16,9 @@ output application/json
 {
     sqlStatement: 
         if ( vars.mailable != null and vars.mailable == "true") 
-            "SELECT * FROM `address-autocomplete` WHERE formattedAddress LIKE '%" ++ vars.query ++ "%' AND countryCode = '" ++ (vars.country  default "US") ++ "' AND mailable = 1 LIMIT " ++ (vars.limit default "20")
+            "SELECT * FROM `address-autocomplete` WHERE formattedAddress LIKE '%" ++ vars.searchText ++ "%' AND countryCode = '" ++ (vars.countryCode  default "US") ++ "' AND mailable = 1 LIMIT " ++ (vars.limit default "20")
         else 
-            "SELECT * FROM `address-autocomplete` WHERE formattedAddress LIKE '%" ++ vars.query ++ "%' AND countryCode = '" ++ (vars.country default "US") ++ "' LIMIT " ++ (vars.limit default "20")
+            "SELECT * FROM `address-autocomplete` WHERE formattedAddress LIKE '%" ++ vars.searchText ++ "%' AND countryCode = '" ++ (vars.countryCode default "US") ++ "' LIMIT " ++ (vars.limit default "20")
 }
 ]]></ee:set-payload>
 			</ee:message>

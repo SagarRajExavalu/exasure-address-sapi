@@ -40,30 +40,30 @@ output application/json
         <ee:transform doc:name="Transform Message" doc:id="35aa556e-f4d0-4334-9737-940ec929d2e1">
             <ee:message />
             <ee:variables>
-                <ee:set-variable variableName="query"><![CDATA[%dw 2.0
-output application/json
----
-attributes.queryParams.query]]></ee:set-variable>
-                <ee:set-variable variableName="country"><![CDATA[%dw 2.0
-output application/json
----
-attributes.queryParams.country]]></ee:set-variable>
                 <ee:set-variable variableName="mailable"><![CDATA[%dw 2.0
 output application/json
 ---
 attributes.queryParams.mailable]]></ee:set-variable>
-				<ee:set-variable variableName="limit" ><![CDATA[%dw 2.0
+                <ee:set-variable variableName="limit"><![CDATA[%dw 2.0
 output application/json
 ---
 attributes.queryParams.limit]]></ee:set-variable>
-				<ee:set-variable variableName="near" ><![CDATA[%dw 2.0
+                <ee:set-variable variableName="near"><![CDATA[%dw 2.0
 output application/json
 ---
 attributes.queryParams.near]]></ee:set-variable>
-				<ee:set-variable variableName="layers" ><![CDATA[%dw 2.0
+                <ee:set-variable variableName="layers"><![CDATA[%dw 2.0
 output application/json
 ---
 attributes.queryParams.layers]]></ee:set-variable>
+				<ee:set-variable variableName="searchText" ><![CDATA[%dw 2.0
+output application/json
+---
+attributes.queryParams.searchText]]></ee:set-variable>
+				<ee:set-variable variableName="countryCode" ><![CDATA[%dw 2.0
+output application/json
+---
+attributes.queryParams.countryCode]]></ee:set-variable>
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="getAddressSubFlow" doc:id="91a437e9-409b-4609-b87a-f0c2e2e24526" name="getAddressSubFlow" />
