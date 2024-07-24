@@ -1,0 +1,28 @@
+application:
+  name: "exasure-address-api"
+  version: "1.0.0"
+api:
+    id: ""
+
+http:
+    port: "8081"
+    secure.port: "8091"
+    readTimeout: "30000"
+    connectionTimeOut: "40000"
+
+https:
+    port: "8082"
+    secure.port: "8092"
+    path: "/api/*"
+
+reconnection:
+    frequecy: "2000"
+    attempts: "2"
+
+
+database:
+  host: "iibconversion.cjlogxh0nqwj.us-east-1.rds.amazonaws.com"
+  port: "3306"
+  user: "admin"
+  database: "radar-api"
+  
