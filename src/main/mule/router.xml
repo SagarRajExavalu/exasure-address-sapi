@@ -14,30 +14,7 @@
         <error-handler ref="apikit-errors" />
     </flow>
     <flow name="get:\address\autocomplete:exasure-address-sapi-config">
-        <!-- [STUDIO:"Transform Message"]<ee:transform doc:name="Transform Message">
-            <ee:message>
-                <ee:set-payload><![CDATA[%dw 2.0
-output application/json
-&#45;&#45;-
-[
-  {
-    addressLabel: "334 E 25th St",
-    streetNumber: "334",
-    streetName: "E 25th St",
-    city: "Paterson",
-    stateCode: "NJ",
-    postalCode: "07514",
-    county: "Passaic",
-    countryCode: "US",
-    formattedAddress: "334 E 25th St, Paterson, NJ 07514 US",
-    state: "New Jersey",
-    country: "United States",
-    countryFlag: "🇺🇸"
-  }
-&#93; as Array {encoding: "UTF-8", mediaType: "application/json"}&#93;&#93;></ee:set-payload>
-            </ee:message>
-        </ee:transform> [STUDIO] -->
-        <ee:transform doc:name="Transform Message" doc:id="35aa556e-f4d0-4334-9737-940ec929d2e1">
+        <ee:transform doc:name="initVariables" doc:id="35aa556e-f4d0-4334-9737-940ec929d2e1">
             <ee:message />
             <ee:variables>
                 <ee:set-variable variableName="mailable"><![CDATA[%dw 2.0

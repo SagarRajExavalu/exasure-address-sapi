@@ -23,12 +23,12 @@ output application/json
 ]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<db:select doc:name="Select" doc:id="be280aec-6316-44c4-8463-c5230a4ce291" config-ref="Database_Config">
+		<db:select doc:name="addressAutocomplete" doc:id="be280aec-6316-44c4-8463-c5230a4ce291" config-ref="Database_Config">
 			<error-mapping targetType="APP:DATABASE" />
 			<reconnect frequency="${reconnection.frequecy}" count="${reconnection.attempts}"/>
 			<db:sql ><![CDATA[#[payload.sqlStatement]]]></db:sql>
 		</db:select>
-		<ee:transform doc:name="Transform Message" doc:id="314dfc80-30d6-4ec9-b958-85740900392c" >
+		<ee:transform doc:name="response" doc:id="314dfc80-30d6-4ec9-b958-85740900392c" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
